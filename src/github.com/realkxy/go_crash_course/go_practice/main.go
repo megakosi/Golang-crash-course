@@ -1,27 +1,30 @@
-package main 
-import (
-	"fmt"
-	"./strutil"
-)
-func main () {
+package main
+import "fmt"
 
 
-	var a , b , c = 1 , 2 , "foo"
+func  main()  {
+	
 
-	var (
-		name = "Kosi Eric"
-		age = 20
-		course = "Physics"
-	)
-	name = "Kosi Eric";
-	var myNum1 = 1234;
-	fmt.Println("My name is" , name);
-	fmt.Println("My Num:", myNum1);
-	fmt.Printf("MyNum1 type: %T\n" , myNum1)
-	fmt.Println(a , b , c)
+	foo  := map[string]string {"name" : "Derek Banas" , "language" : "Java" , "channel" : "NewThinkTank"}
+	bar  := map[string]string{"name" : "Bucky Roberts" , "language" : "Python" , "channel" : "TheNewBoston"}
+	barz := map[string]string{"name" : "Harrison Kinsley" ,"language" : "Python" , "channel" : "Sentdex"}
+	
+	
+	var profiles [3]map[string]string
+	profiles[0] = foo
+	profiles[1] = bar
+	profiles[2] = barz
 
-	var word string = "Python";
-	fmt.Printf("My name is %s and i am %d years old, I'm a student of Imo State University studying %s\n" , name , age , course)
-    fmt.Printf("%s reversed is:%s",word , strutil.Reverse(word))
+
+	for index , profile:=range profiles {
+		fmt.Printf("--- Profile %d ---\n" , index + 1)
+
+		for key , value := range profile {
+			fmt.Printf("%s : %s\n", key , value)
+
+		}
+	}
+
+
+
 }
-
